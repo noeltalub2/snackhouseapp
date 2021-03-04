@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #bbbbbb;
+    font-size: 15px;
+    font-family: 'Manrope';
+}
+
+.wrapper {
+    margin: 2% 15%;
+    text-align: center;
+}
+
+.container {
+    background-color: #ffffff;
+    display: inline-block;
+    border: solid 2px white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.row {
+    margin: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid 2px #d0d0d0;
+    border-radius: 10px;
+}
+
+
+.row-option {
+    background-color: #e1e1e1;
+}
+
+.row-form {
+    background-color: #ececec;
+}
+
+.row-btn {
+    border: none;
+    padding: 0;
+    margin: 10px;
+    flex-direction: row;
+
+
+}
+
+.form-select {
+    background-color: #e1e1e1;
+    border: none;
+    font-size: 1.25rem;
+    outline: none;
+
+}
+
+.input-orders {
+    background-color: #ececec;
+    border: none;
+    outline: none;
+    font-size: 1.25rem;    
+}
+
+
+.btn {
+    border: none;
+    font-size: 1.25rem;
+    outline: none;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+
+}
+.btn-one {
+    background-color: #333;
+    margin-right: 10px;
+}
+
+.btn-two {
+    background-color: rgb(233, 49, 49);
+}
+.btn:hover{
+    background-color: #adce74;
+}

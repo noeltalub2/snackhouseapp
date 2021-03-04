@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="row row-option">
+        <label for="first">TYPE OF BURGER </label>
+        <select id="burger-option" class="form-select">
+          <option value = "none"hidden>Please Choose</option>
+          <option value="regBurger">Regular Burger</option>
+          <option value="regBurCheese">Regular Burger with Cheese</option>
+          <option value="regBurCheeseEgg">
+            Regular Burger with Cheese and Egg
+          </option>
+        </select>
+      </div>
+      <div class="row row-form">
+        <label for="burgerName">BURGER</label>
+        <input type="text" class="input-orders" id="burgersInput" placeholder="Number of Burger"/>
+      </div>
+      <div class="row row-option">
+        <label for="first">TYPE OF DRINK</label>
+        <select id="drink-option" class="form-select">
+          <option value="none" hidden>Please Choose</option>
+          <option value="iceTea">Iced Tea</option>
+          <option value="gulaman">Gulaman</option>
+        </select>
+      </div>
+      <div class="row row-form">
+        <label for="burgerName">DRINK</label>
+        <input type="text" class="input-orders" id="drinksInput" placeholder="Number of Drink"/>
+      </div>
+      <div class="row row-btn">
+        <input class="btn btn-one" type="button" onclick="total()" value="Total →" />
+        <input class="btn btn-two" type="button" onclick="reset()" value="Reset ⟲" />
+      </div>
+      <div class="total">
+        <p id="burgerTotal"></p>
+        <p id="drinkTotal"></p>
+        <p id="totalAmount"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    function total() {
+      var orderBurger, orderDrink, burgerOption, drinkOption, totalBurger,totalDrink, resultBurger, resultDrink, totalAmount;
+
+      orderBurger = document.getElementById("burgersInput").value;
+      orderDrink = document.getElementById("drinksInput").value;
+      burgerOption = document.getElementById("burger-option").value;
+      drinkOption = document.getElementById("drink-option").value;
+
+      if (orderBurger.trim() == "") {
+        orderBurger = 0;
+      }
+      else {
+        orderBurger = parseInt(document.getElementById("burgersInput").value);
+      }
+
+      if (orderDrink.trim() == "") {
+        orderDrink = 0;
+      }
+
+      else {
+        orderDrink = parseInt(document.getElementById("drinksInput").value);
+      }
+
+
+      if (burgerOption == "regBurger") {
+        totalBurger = orderBurger * 32
+        resultBurger = `${orderBurger}x Regular Burger: ₱${totalBurger}`;
+      }
+
+      else if (burgerOption == "regBurCheese") {
+        totalBurger = orderBurger * 37
+        resultBurger = `${orderBurger}x Regular Burger Cheese: ₱${totalBurger}`;
+      }
+      else if (burgerOption == "regBurCheeseEgg") {
+        totalBurger = orderBurger * 32
+        resultBurger = `${orderBurger}x Regular Burger Cheese Egg: ₱${totalBurger}`;
+      }
+
+      else{
+        totalBurger = 0
+        resultBurger = "No burger"
+      }
+
+      if (drinkOption == "iceTea") {
+        totalDrink = orderDrink * 18
+        resultDrink = `${orderDrink}x Ice Tea: ₱${totalDrink}`;
+      }
+
+      else if (drinkOption == "gulaman") {
+        totalDrink = orderDrink * 22
+        resultDrink = `${orderDrink}x Gulaman: ₱${totalDrink}`;
+      }
+      
+      else {
+        totalDrink = 0
+        resultDrink = "No Drinks"
+      }
+      totalAmount = `Your total is ₱${totalDrink + totalBurger}`
+      document.getElementById("burgerTotal").innerHTML = resultBurger;
+      document.getElementById("drinkTotal").innerHTML = resultDrink;
+      document.getElementById("totalAmount").innerHTML = totalAmount;
+
+    }
+
+    function reset() {
+      orderBurger = document.getElementById("burgersInput").value = "";
+      orderDrink = document.getElementById("drinksInput").value = "";
+      burgerOption = document.getElementById("burger-option").value = "none";
+      drinkOption = document.getElementById("drink-option").value = "none";
+      document.getElementById("burgerTotal").innerHTML = "";
+      document.getElementById("drinkTotal").innerHTML = "";
+      document.getElementById("totalAmount").innerHTML = "";
+    }
+  </script>
+</body>
+
+</html>
